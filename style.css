@@ -1,0 +1,442 @@
+:root {
+	--bg-matte-charcoal: #1c1d1f;
+	--text-anodized-silver: #d1d5db;
+	--accent-safety-orange: #ff5a00;
+	--label-muted: #9ca3af;
+}
+
+/* Base Body Setup */
+body {
+	background-color: var(--bg-matte-charcoal);
+	color: var(--text-anodized-silver);
+	font-family: 'DIN 1451', 'Roboto Mono', sans-serif;
+	margin: 0;
+	padding: 2rem;
+}
+
+/* Bauhaus Web Paragraph Rules */
+p {
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.6; /* Generous line height for round geometric characters */
+	letter-spacing: 0.03em; /* Tracking out the text prevents letter crowding */
+	max-width: 60ch; /* Keeps line length optimal for readability */
+	margin-bottom: 1.5rem;
+}
+
+/* Technical Labels (Industrial Vibe) */
+.tech-label {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	color: var(--label-muted);
+	display: block;
+	margin-bottom: 0.5rem;
+}
+/* Core Layout Settings */
+.product-specs {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 4rem;
+	max-width: 1200px;
+	margin: 4rem auto;
+	padding: 0 2rem;
+	background-color: var(--bg-matte-charcoal);
+}
+
+/* Logo Stamping */
+.logo-fedmo {
+	font-family: 'DIN 1451', 'Futura', sans-serif;
+	font-size: 3.5rem;
+	font-weight: 900;
+	letter-spacing: -0.05em;
+	margin: 0 0 0.5rem 0;
+	color: var(--text-anodized-silver);
+	text-transform: lowercase;
+}
+
+/* The Safety Orange Indicator on the 'o' */
+.logo-fedmo .orange-dot {
+	color: var(--accent-safety-orange);
+	position: relative;
+}
+/* --- INLINE LOGO APERTURE STYLING --- */
+.nav-logo {
+	display: inline-flex;
+	align-items: center;
+	font-family: 'DIN 1451', 'Futura', sans-serif;
+	font-size: 1.75rem;
+	font-weight: 900;
+	color: var(--text-anodized-silver);
+	text-decoration: none;
+	text-transform: lowercase;
+	letter-spacing: -0.04em;
+}
+
+/* Inline container locking the asset layout metrics */
+.logo-aperture-wrapper {
+	display: inline-block;
+	width: 1.45rem; /* Scaled seamlessly relative to logo text sizing */
+	height: 1.45rem;
+	margin-left: 0.05rem;
+	transform: translateY(
+		0.08rem
+	); /* Fine calibration adjustments to font baseline */
+}
+
+.logo-aperture {
+	width: 100%;
+	height: 100%;
+	display: block;
+	transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Precise kinetic curve */
+}
+
+/* Mechanical Shutter Rotation Effect on Interaction */
+.nav-logo:hover .logo-aperture {
+	transform: rotate(30deg);
+}
+
+/* Headings & Text Alignment */
+h2 {
+	font-family: 'DIN 1451', sans-serif;
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-transform: lowercase;
+	color: #ffffff; /* Crisp white for headings to step forward */
+	margin: 0.25rem 0 1rem 0;
+}
+
+.content-column {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+}
+
+/* Industrial Action Button */
+.cta-button {
+	display: inline-block;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 0.85rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 0.1em;
+	color: var(--text-anodized-silver);
+	border: 1px solid var(--text-anodized-silver);
+	padding: 0.75rem 1.5rem;
+	margin-top: 1rem;
+	transition: all 0.2s ease;
+}
+
+.cta-button:hover {
+	border-color: var(--accent-safety-orange);
+	color: #ffffff;
+	background-color: rgba(255, 90, 0, 0.1); /* Subtle safety orange glow */
+	box-shadow: 0 0 10px rgba(255, 90, 0, 0.2);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+	.product-specs {
+		grid-template-columns: 1fr;
+		gap: 2.5rem;
+	}
+}
+/* --- NAV BAR STRUCTURE --- */
+.fedmo-navbar {
+	background-color: var(--bg-matte-charcoal);
+	border-bottom: 1px solid #2a2b2d; /* Subtle divider grid line */
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	width: 100%;
+}
+
+.nav-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 1.5rem 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* --- LOGO WITH INTEGRATED TALLY LIGHT --- */
+.nav-logo {
+	font-family: 'DIN 1451', 'Futura', sans-serif;
+	font-size: 1.75rem;
+	font-weight: 900;
+	color: var(--text-anodized-silver);
+	text-decoration: none;
+	text-transform: lowercase;
+	letter-spacing: -0.04em;
+}
+
+.nav-logo .tally-light {
+	color: var(--accent-safety-orange);
+}
+
+/* --- DESKTOP NAVIGATION LINKS --- */
+.nav-links {
+	display: flex;
+	align-items: center;
+	gap: 2.5rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.lens {
+	color: var(--accent-safety-orange);
+}
+
+.nav-links li {
+	display: flex;
+	align-items: center;
+}
+
+/* Technical Numbering (Bauhaus Indexing) */
+.nav-index {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 0.65rem;
+	color: var(--label-muted);
+	margin-right: 0.4rem;
+	user-select: none;
+}
+
+.nav-links a {
+	font-family: 'DIN 1451', sans-serif;
+	font-size: 0.95rem;
+	font-weight: 500;
+	color: var(--text-anodized-silver);
+	text-decoration: none;
+	text-transform: lowercase;
+	letter-spacing: 0.02em;
+	transition: color 0.15s ease;
+}
+
+.nav-links a:hover {
+	color: #ffffff;
+}
+
+/* Mini Action Link */
+.nav-links .nav-cta {
+	color: var(--accent-safety-orange);
+	font-family: 'Roboto Mono', monospace;
+	font-size: 0.85rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	border: 1px solid var(--accent-safety-orange);
+	padding: 0.4rem 1rem;
+}
+
+.nav-links .nav-cta:hover {
+	background-color: var(--accent-safety-orange);
+	color: #ffffff;
+}
+
+/* --- MOBILE MENU MECHANICS (PURE CSS) --- */
+.menu-checkbox {
+	display: none;
+}
+
+.menu-button {
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 24px;
+	height: 14px;
+	cursor: pointer;
+}
+
+/* Industrial Two-Bar Menu Icon */
+.menu-button span {
+	display: block;
+	height: 2px;
+	width: 100%;
+	background-color: var(--text-anodized-silver);
+	transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* --- RESPONSIVE MEDIA QUERY (BREAKPOINT: 768px) --- */
+@media (max-width: 768px) {
+	.menu-button {
+		display: flex;
+	}
+
+	.nav-links {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		background-color: var(--bg-matte-charcoal);
+		border-bottom: 1px solid #2a2b2d;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0;
+		padding: 1rem 2rem 2rem 2rem;
+		box-sizing: border-box;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.nav-links li {
+		width: 100%;
+		padding: 1rem 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+	}
+
+	.nav-links .nav-cta {
+		display: inline-block;
+		margin-top: 0.5rem;
+		width: auto;
+	}
+
+	/* Trigger Drawer Menu Open via CSS Checkbox Hack */
+	.menu-checkbox:checked ~ .nav-links {
+		max-height: 400px;
+	}
+
+	/* Transform Menu Icon into an 'X' on Open */
+	.menu-checkbox:checked ~ .menu-button span:nth-child(1) {
+		transform: translateY(6px) rotate(45deg);
+		background-color: var(--accent-safety-orange);
+	}
+
+	.menu-checkbox:checked ~ .menu-button span:nth-child(2) {
+		transform: translateY(-6px) rotate(-45deg);
+		background-color: var(--accent-safety-orange);
+	}
+}
+/* --- FOOTER STRUCTURE --- */
+.fedmo-footer {
+	background-color: #121314; /* Slightly darker than matte-charcoal for depth */
+	border-top: 1px solid #2a2b2d; /* Structural boundary line */
+	padding-top: 4rem;
+	margin-top: 6rem;
+	width: 100%;
+}
+
+.footer-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2rem 4rem 2rem;
+	display: grid;
+	grid-template-columns: 2fr 1fr 1fr; /* Asymmetric balance favoring the brand */
+	gap: 4rem;
+}
+
+/* --- BRAND SECTION --- */
+.footer-logo {
+	font-family: 'DIN 1451', 'Futura', sans-serif;
+	font-size: 2.25rem;
+	font-weight: 900;
+	color: var(--text-anodized-silver);
+	margin: 0 0 0.5rem 0;
+	text-transform: lowercase;
+	letter-spacing: -0.04em;
+}
+
+.footer-logo .tally-light {
+	color: var(--accent-safety-orange);
+}
+
+.footer-tagline {
+	font-family: 'DIN 1451', sans-serif;
+	font-size: 0.95rem;
+	color: var(--label-muted);
+	margin: 0 0 2rem 0;
+	text-transform: lowercase;
+}
+
+/* System Status Tally */
+.system-status {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.status-indicator {
+	width: 6px;
+	height: 6px;
+	background-color: var(--accent-safety-orange);
+	border-radius: 50%;
+	box-shadow: 0 0 8px var(--accent-safety-orange); /* Glowing tally light */
+}
+
+/* --- FOOTER LINKS --- */
+.footer-nav {
+	display: flex;
+	flex-direction: column;
+}
+
+.footer-links {
+	list-style: none;
+	padding: 0;
+	margin: 1rem 0 0 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.footer-links a {
+	font-family: 'DIN 1451', sans-serif;
+	font-size: 0.95rem;
+	color: var(--text-anodized-silver);
+	text-decoration: none;
+	text-transform: lowercase;
+	transition: color 0.15s ease, padding-left 0.15s ease;
+}
+
+.footer-links a:hover {
+	color: #ffffff;
+	padding-left: 0.25rem; /* Tiny mechanical push on hover */
+}
+
+/* --- METADATA & CALIBRATION BAR --- */
+.footer-meta {
+	border-top: 1px solid #1c1d1f;
+	background-color: var(--bg-matte-charcoal);
+	padding: 1.5rem 2rem;
+}
+
+.meta-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.copyright {
+	font-family: 'DIN 1451', sans-serif;
+	font-size: 0.85rem;
+	color: var(--label-muted);
+	margin: 0;
+}
+
+.tech-stamp {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 0.75rem;
+	color: var(--label-muted);
+	text-transform: lowercase;
+	letter-spacing: 0.05em;
+}
+
+/* --- RESPONSIVE BREAKPOINT (768px) --- */
+@media (max-width: 768px) {
+	.footer-container {
+		grid-template-columns: 1fr;
+		gap: 3rem;
+		padding-bottom: 3rem;
+	}
+
+	.meta-container {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
+	}
+}
